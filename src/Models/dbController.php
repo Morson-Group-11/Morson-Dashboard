@@ -1,4 +1,6 @@
 <?php
+require 'src/vendor/autoload.php';
+Use Dotenv\Dotenv;
 
 class dbController
 {
@@ -7,13 +9,12 @@ class dbController
     //Holds the PDO object
     protected $_dbHandle;
 
-
     public function getInstance()
     { //Check if the database instance has been created, if not create one and return it
-        $username = '';
-        $password = '';
-        $host = '';
-        $dbName = '';
+        $username = getenv('DB_USER');
+        $password = getenv('DB_PASS');
+        $host = getenv('DB_HOST');
+        $dbName = getenv('DB_NAME');
 
         if (self::$_dbInstance === null)
         {
@@ -21,6 +22,7 @@ class dbController
         }
         return self::$_dbInstance;
     }
+    
     private function __construct($username, $password, $host, $database)
     { //Create the PDO object
         try
