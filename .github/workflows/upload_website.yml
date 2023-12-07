@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+    - feat/development
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: rsync deploy
+      uses: burnett01/rsync-deployments@6.0.0
+      with:
+        switches: -avzr --delete
+        path: src/
+        remote_path: ~/public_html/
+        remote_host: poseidon.salford.ac.uk
+        remote_user: hc23-11
+        remote_key: ${{ secrets.POSEIDON_SSH_PRIVATE_KEY }}
