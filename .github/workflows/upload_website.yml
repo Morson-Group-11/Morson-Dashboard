@@ -14,6 +14,6 @@ jobs:
         switches: -avzr --delete
         path: src/
         remote_path: ~/public_html/
-        remote_host: poseidon.salford.ac.uk
-        remote_user: hc23-11
-        remote_key: ${{ secrets.POSEIDON_SSH_PRIVATE_KEY }}
+        remote_host: ${{ secrets.REMOTE_HOST }}
+        remote_user: ${{ secrets.REMOTE_USER }}
+        remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
