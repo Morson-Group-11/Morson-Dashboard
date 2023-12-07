@@ -1,7 +1,8 @@
 <?php
-require 'src/vendor/autoload.php';
+require __DIR__ . '../../vendor/autoload.php';
 Use Dotenv\Dotenv;
-
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../..');
+$dotenv->load();
 class dbController
 {
     //Holds the database instance as a static variable
@@ -22,7 +23,7 @@ class dbController
         }
         return self::$_dbInstance;
     }
-    
+
     private function __construct($username, $password, $host, $database)
     { //Create the PDO object
         try
