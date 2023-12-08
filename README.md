@@ -7,9 +7,12 @@ This project is a dashboard made to display important information within offices
 In this project, we have used an MVC template to properly display information for the different departments within the company.
 
 ## Installation
-To install this project, you should preferably be using PHPstorm. If you are not, you can download the project as a zip file and extract it to your desired location.
-Ensure that you are working on your own branch and not the master branch. If you are unsure how to do this, please refer to the Git Branching documentation.
-
+To install this project, you will need to clone the repository to your local machine.
+```bash
+git clone https://github.com/Morson-Group-11/Morson-Dashboard.git
+```
+You will need to have a local server running to use this project. If you are using PHPstorm, you can use the built in server, if not 
+XAMPP is a good alternative for Windows users as it includes MySQL and PHP.
 ## Usage
 To use this project, you will need to have a local server running. If you are using PHPstorm, you can use the built in server. 
 If you are unsure how to do this, please refer to the PHPstorm documentation, or message a member of the team.
@@ -17,12 +20,10 @@ If you are unsure how to do this, please refer to the PHPstorm documentation, or
 When running the local server, the root directory should be the src folder.
 
 ## Contributing
-To contribute to this project, you will need to create a new branch. Ensure that you make a new branch before you make any changes. This can be done by using the command `git checkout -b <branch-name>`.
-When you have made your changes, you will need to commit them to your branch. This can be done by using the command `git commit -m "<commit-message>"`.
-When you have committed your changes, you will need to push them to the repository. This can be done by using the command `git push origin <branch-name>`.
-When you have pushed your changes, you will need to create a pull request. This can be done by going to the repository on GitHub and clicking the "New Pull Request" button.
-When you have created your pull request, you will need to wait for it to be reviewed by a member of the team. If it is approved, it will be merged into the development branch.
+To contribute to this project, you must work on your own branch. 
+Any pull requests made to the master branch will be rejected, please create pull requests to feat/development.
 
+When creating a pull request, please ensure that you have added a description of what you have changed, and why you have changed it.
 # __**DO NOT MERGE YOUR OWN PULL REQUESTS**__
 
 
