@@ -78,17 +78,17 @@
 <section>
     <div class="data-section">
         <h2>Number of live bids</h2>
-        <p>live number</p>
+        <p><?php echo $view->businessDataSet->getLiveBids(); ?></p>
     </div>
 
     <div class="data-section">
         <h2>Total Bids</h2>
-        <p>total bids live number</p>
+        <p><?php echo '£' . number_format($view->businessDataSet->getValueLiveBids()); ?></p>
     </div>
 
     <div class="data-section">
         <h2>Number of current leads</h2>
-        <p>Data for section 3 goes here.</p>
+        <p><?php echo $view->businessDataSet->getCurrentLeads(); ?></p>
     </div>
 </section>
 
