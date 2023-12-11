@@ -1,9 +1,19 @@
 <?php
 require_once 'Models/businessData.php';
 require_once 'Models/dbController.php';
-class BusinessDataSet
+class DepartmentDataset
 {
     protected $_dbHandle, $_dbInstance;
+    protected $departments = array(
+        'business_development',
+        'commercial_and_accounts' => null,
+        'health_and_safety' => null,
+        'human_resources' => null,
+        'it_and_systems' => null,
+        'it_and_systems_software' => null,
+        'it_and_systems_status' => null
+    );
+
 
     public function __construct()
     {
@@ -13,15 +23,16 @@ class BusinessDataSet
 
     public function fetchAllBusinesses()
     {
-        $sqlQuery = "SELECT * FROM business_development";
-        $statement = $this->_dbHandle->prepare($sqlQuery);
-        $statement->execute();
-        $dataSet = [];
-        while ($row = $statement->fetch())
-        {
-            $dataSet[] = new BusinessData($row);
+        foreach ($this->departments as $department => &$value) {
+            $sqlQuery = "SELECT * FROM " . $department;
+            $statement = $this->_dbHandle->prepare($sqlQuery);
+            $statement->execute();
+
+            $value =  $statement->fetch();
+
         }
-        return $dataSet;
+
+        echo $this->departments;
     }
 
     public function fetchBusinessFromMonth($month)
