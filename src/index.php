@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
-require_once 'Models/ViewRotator.php';
+require_once 'Models/viewRotator.php';
 
 $viewRotator = new ViewRotator();
 $currentView = $viewRotator->getCurrentView();
