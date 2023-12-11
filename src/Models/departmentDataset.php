@@ -5,7 +5,7 @@ class DepartmentDataset
 {
     protected $_dbHandle, $_dbInstance;
     protected $departments = array(
-        'business_development',
+        'business_development' => null,
         'commercial_and_accounts' => null,
         'health_and_safety' => null,
         'human_resources' => null,
@@ -37,11 +37,24 @@ class DepartmentDataset
 
     public function fetchBusinessFromMonth($month)
     {
-        $sqlQuery = "SELECT * FROM business_development WHERE month = :month";
-        $statement = $this->_dbHandle->prepare($sqlQuery);
-        $statement->bindParam(":month", $month);
-        $statement->execute();
-        $result = $statement->fetch(PDO::FETCH_ASSOC);
-        return new BusinessData($result);
+        foreach ($this->departments as $department => &$value) {
+            // Check if the 'month' column exists in the table
+            $sqlQuery = "SHOW COLUMNS FROM " . $department . " LIKE 'month'";
+            $statement = $this->_dbHandle->prepare($sqlQuery);
+            $statement->execute();
+            $columnExists = $statement->fetch(PDO::FETCH_ASSOC);
+
+            if ($columnExists) {
+                // If the 'month' column exists, execute the query with the WHERE clause on the 'month' column
+                $sqlQuery = "SELECT * FROM " . $department . " WHERE month = :month";
+                $statement = $this->_dbHandle->prepare($sqlQuery);
+                $statement->bindParam(":month", $month);
+                $statement->execute();
+
+                $value =  $statement->fetch(PDO::FETCH_ASSOC);
+            }
+        }
+
+        return $this->departments;
     }
 }
