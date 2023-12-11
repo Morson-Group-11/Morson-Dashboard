@@ -4,90 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morson</title>
-    <style>
-        body {
-            font-family: Poppins, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #FFB81C;
-            color: #fff;
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 10px solid #000;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-
-        h1 {
-            font-size: 64px;
-            margin-top: 10px;
-            flex: 1;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-        }
-
-        header img {
-            max-height: 65px;
-            margin-right: 10px;
-        }
-
-        section {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px;
-            flex-direction: row;
-        }
-
-        .data-section {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-            height: 100%; /* Set a fixed height for each data-section */
-        }
-
-
-        footer {
-            background-color: #00008b;
-            color: #fff;
-            text-align: center;
-            padding: -1px;
-            margin-top: auto;
-            position: relative;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/Views/mystyles.css">
 </head>
 <body>
 
 <header>
     <img src="/Views/Images/morson.png" alt="">
-    <h1 style='position:relative; top:60px; left:-130px'>IT and Systems</h1>
+    <h1 style='position:relative; top:60px; left:-130px; font-size: 65px'>IT and Systems</h1>
 </header>
 
 <section>
     <div class="data-section">
-        <h2>Scheduled Outages</h2>
-        <p>04/01/2024 @ 18:00-20:00.</p>
+        <h2 style="font-size: 50px">Scheduled Outages</h2>
+        <p style="font-size: 30px">04/01/2024 @ 18:00-20:00.</p>
     </div>
 
     <div class="data-section">
-        <h2>System Status</h2>
-        <p style="color: #AAFF00;"> Online</p>
+        <h2 style="font-size: 50px">System Status</h2>
+        <p style="color: #598d03; font-size: 30px"> <b>Online</b></p>
     </div>
 
     <div class="data-section">
-        <h2>Build Status - Software</h2>
-        <p>95%</p>
+        <h2 style="font-size: 50px">Build Status - Software</h2>
+        <p style="font-size: 30px">95%</p>
     </div>
 </section>
 
