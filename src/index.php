@@ -1,8 +1,13 @@
 <?php
-require_once 'Models/departmentDataset.php';
+session_start();
+require_once 'Models/ViewRotator.php';
+
+$viewRotator = new ViewRotator();
+$currentView = $viewRotator->getCurrentView();
 
 $view = new stdClass();
-$businessDataSet = new DepartmentDataset();
-$view->departmentDataSet = $businessDataSet->fetchBusinessFromMonth(12);
-//$view->businessDataSet = $businessDataSet->fetchBusinessFromMonth(12);
-require_once('Views/business.phtml');
+$view->departmentDataSet = $viewRotator->getViewData($currentView);
+
+require_once 'Views/' . $currentView;
+
+$viewRotator->getNextView();
