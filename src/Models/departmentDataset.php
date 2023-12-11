@@ -1,5 +1,4 @@
 <?php
-require_once 'Models/businessData.php';
 require_once 'Models/dbController.php';
 class DepartmentDataset
 {
@@ -28,11 +27,11 @@ class DepartmentDataset
             $statement = $this->_dbHandle->prepare($sqlQuery);
             $statement->execute();
 
-            $value =  $statement->fetch();
+            $value =  $statement->fetchAll(PDO::FETCH_ASSOC);
 
         }
 
-        echo $this->departments;
+        return $this->departments;
     }
 
     public function fetchBusinessFromMonth($month)
@@ -43,7 +42,6 @@ class DepartmentDataset
             $statement = $this->_dbHandle->prepare($sqlQuery);
             $statement->execute();
             $columnExists = $statement->fetch(PDO::FETCH_ASSOC);
-
             if ($columnExists) {
                 // If the 'month' column exists, execute the query with the WHERE clause on the 'month' column
                 $sqlQuery = "SELECT * FROM " . $department . " WHERE month = :month";
