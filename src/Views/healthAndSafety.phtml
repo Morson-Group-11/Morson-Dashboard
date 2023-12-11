@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morson</title>
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #BDDCE6;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 10px solid #000;
+            display: flex;
+            align-items: flex-start; /* Updated alignment */
+            justify-content: flex-start; /* Updated justification */
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-top: 10px;
+            flex: 1;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            position: relative;
+            top: 60px;
+            left: -130px;
+        }
+
+        header img {
+            max-height: 65px; /* Updated max-height */
+            margin-right: 10px; /* Updated margin-right */
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            flex-direction: row;
+        }
+
+        .data-section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            height: 100%; /* Set a fixed height for each data-section */
+        }
+
+        footer {
+            background-color: #00008b;
+            color: #fff;
+            text-align: center;
+            padding: -1px;
+            margin-top: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="/Views/Images/morson.png" alt="">
+    <h1 style='position:relative; top:60px; left:-130px'>Health and Safety</h1>
+</header>
+
+<section>
+    <div class="data-section">
+        <h2>Total Accidents</h2>
+        <p>400000</p>
+    </div>
+
+    <div class="data-section">
+        <h2>Health and Safety Bulletin</h2>
+        <p>This month we have this</p>
+        <p>safety equipment</p>
+        <p>extra training</p>
+    </div>
+
+    <div class="data-section">
+        <h2>Absences</h2>
+        <p>at least callum hall.</p>
+    </div>
+</section>
+
+<footer>
+    <p>sample text</p>
+</footer>
+
+<!-- Add more sections or content as needed -->
+
+</body>
+</html>

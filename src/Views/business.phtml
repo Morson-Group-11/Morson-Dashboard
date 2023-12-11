@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morson</title>
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #AF0707; /* Updated color */
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px; /* Further reduced top and bottom padding */
+            border-bottom: 10px solid #000;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-top: 10px;
+            flex: 1;
+            text-align: center;
+            align-items: center; /* Center the text vertically */
+            justify-content: center; /* Center the text horizontally */
+            display: flex; /* Added to enable align-items and justify-content */
+        }
+
+        header img {
+            max-height: 65px;
+            margin-right: 10px; /* Reduced margin-right to move the image more to the left */
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            flex-direction: row;
+        }
+
+        .data-section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            height: 100%; /* Set a fixed height for each data-section */
+        }
+
+        footer {
+            background-color: #00008b;
+            color: #fff;
+            text-align: center;
+            padding: -1px;
+            margin-top: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="/Views/Images/morson.png" alt="">
+    <h1 style='position:relative; top:60px; left:-130px'>Business Development Updates</h1>
+
+
+</header>
+
+<section>
+    <div class="data-section">
+        <h2>Number of live bids</h2>
+        <p>live number</p>
+    </div>
+
+    <div class="data-section">
+        <h2>Total Bids</h2>
+        <p>total bids live number</p>
+    </div>
+
+    <div class="data-section">
+        <h2>Number of current leads</h2>
+        <p>Data for section 3 goes here.</p>
+    </div>
+</section>
+
+<footer>
+    <p>sample text</p>
+</footer>
+
+<!-- Add more sections or content as needed -->
+
+</body>
+</html>
