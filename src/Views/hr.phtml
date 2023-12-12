@@ -84,20 +84,19 @@
 
 <section>
     <div class="data-section">
-        <h2 style="font-size: 50px">HR Bulletin</h2>
-        <p style="font-size: 30px">Data for section 1 goes here.</p>
+        <h2>HR Bulletin</h2>
+        <p><?php /** @var TYPE_NAME $view */
+            echo $view->departmentDataSet['human_resources']['human_resources_bulletin'] ?></p>
     </div>
 
     <div class="data-section">
-        <h2 style="font-size: 50px">Upcoming Bank Holidays</h2>
-        <p style="font-size: 30px">New Year's Day - January 1st 2024</p>
-        <p style="font-size: 30px">Spring Bank Holiday - May 27th 2024</p>
-        <p style="font-size: 30px">Good Friday - March 29th 2024</p>
+        <h2>Upcoming Bank Holidays</h2>
+        <p><?php echo $view->departmentDataSet['human_resources']['bank_holiday'] ?></p>
     </div>
 
     <div class="data-section">
-        <h2 style="font-size: 50px">Benefits</h2>
-        <p style="font-size: 30px">Data for section 3 goes here.</p>
+        <h2>Benefit Announcements</h2>
+        <p><?php echo $view->departmentDataSet['human_resources']['benefits_announcements'] ?></p>
     </div>
 </section>
 
@@ -109,3 +108,8 @@
 
 </body>
 </html>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 30000);
+</script>

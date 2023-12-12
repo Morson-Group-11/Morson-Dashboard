@@ -15,18 +15,28 @@
 
 <section>
     <div class="data-section">
-        <h2 style="font-size: 50px">Scheduled Outages</h2>
-        <p style="font-size: 30px">04/01/2024 @ 18:00-20:00.</p>
+        <h2>Scheduled Outages</h2>
+        <?php if (isset($view->departmentDataSet['it_and_systems']['scheduled_outages'])): ?>
+            <p><?php echo $view->departmentDataSet['it_and_systems']['scheduled_outages']; ?></p>
+        <?php else: ?>
+            <p>No scheduled outages data available.</p>
+        <?php endif; ?>
     </div>
 
     <div class="data-section">
-        <h2 style="font-size: 50px">System Status</h2>
-        <p style="color: #598d03; font-size: 30px"> <b>Online</b></p>
+        <h2>System Status</h2>
+        <?php foreach ($view->departmentDataSet['it_and_systems_software'] as $row): ?>
+            <p><strong>Software:</strong> <?php echo $row['software']; ?></p>
+            <p><strong>Build Status:</strong> <?php echo $row['build_status']; ?></p>
+        <?php endforeach; ?>
     </div>
 
     <div class="data-section">
-        <h2 style="font-size: 50px">Build Status - Software</h2>
-        <p style="font-size: 30px">95%</p>
+        <h2>Build Status - Software</h2>
+        <?php foreach ($view->departmentDataSet['it_and_systems_status'] as $row): ?>
+            <p><strong>System:</strong> <?php echo $row['system']; ?></p>
+            <p><strong>System:</strong> <?php echo $row['status']; ?></p>
+        <?php endforeach; ?>
     </div>
 </section>
 
@@ -38,3 +48,8 @@
 
 </body>
 </html>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 30000);
+</script>

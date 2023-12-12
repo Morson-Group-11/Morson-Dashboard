@@ -84,18 +84,20 @@
 
 <section>
     <div class="data-section">
-        <h2 style="font-size: 50px">>Number of live bids</h2>
-        <p style="font-size: 30px">live number</p>
+        <h2>Number of live bids</h2>
+        <p><?php /** @var $view */
+            echo $view->departmentDataSet['business_development']['live_bids']; ?>
+        </p>
     </div>
 
     <div class="data-section">
-        <h2 style="font-size: 50px">Total Bids</h2>
-        <p style="font-size: 30px">total bids live number</p>
+        <h2>Total Bids</h2>
+        <p><?php echo '£' . number_format($view->departmentDataSet['business_development']['value_live_bids']); ?></p>
     </div>
 
     <div class="data-section">
-        <<h2 style="font-size: 50px">Number of current leads</h2>
-        <p style="font-size: 30px">Data for section 3 goes here.</p>
+        <h2>Number of current leads</h2>
+        <p><?php echo $view->departmentDataSet['business_development']['current_leads']; ?></p>
     </div>
 </section>
 
@@ -103,7 +105,11 @@
     <p>sample text</p>
 </footer>
 
-<!-- Add more sections or content as needed -->
 
 </body>
 </html>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 30000);
+</script>
