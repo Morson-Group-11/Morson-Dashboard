@@ -1,6 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 class dbController
 
@@ -12,11 +11,8 @@ class dbController
 
     public static function getInstance()
     { //Check if the database instance has been created, if not create one and return it
+
         $env = parse_ini_file(__DIR__ . '/../.env');
-        $username = $env['DB_USER'];
-        $password = $env['DB_PASS'];
-        $host = $env['DB_HOST'];
-        $dbName = $env['DB_NAME'];
 
 
         if (self::$_dbInstance === null)

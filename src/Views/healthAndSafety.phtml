@@ -79,19 +79,19 @@
 <section>
     <div class="data-section">
         <h2>Total Accidents</h2>
-        <p>400000</p>
+        <p><?php /** @var TYPE_NAME $view */
+            echo $view->departmentDataSet['health_and_safety']['accidents'] ?></p>
     </div>
 
     <div class="data-section">
         <h2>Health and Safety Bulletin</h2>
-        <p>This month we have this</p>
-        <p>safety equipment</p>
-        <p>extra training</p>
+        <p><?php echo $view->departmentDataSet['health_and_safety']['monthly_bulletin'] ?></p>
+
     </div>
 
     <div class="data-section">
         <h2>Absences</h2>
-        <p>at least callum hall.</p>
+        <p><?php echo $view->departmentDataSet['health_and_safety']['absences'] ?></p>
     </div>
 </section>
 
@@ -103,3 +103,8 @@
 
 </body>
 </html>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 30000);
+</script>
