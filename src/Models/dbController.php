@@ -2,6 +2,7 @@
 
 
 class dbController
+
 {
     //Holds the database instance as a static variable
     protected static $_dbInstance = null;
@@ -10,11 +11,9 @@ class dbController
 
     public static function getInstance()
     { //Check if the database instance has been created, if not create one and return it
-        $env = parse_ini_file('.env');
-        $username = $env['DB_USER'];
-        $password = $env['DB_PASS'];
-        $host = $env['DB_HOST'];
-        $dbName = $env['DB_NAME'];
+
+        $env = parse_ini_file(__DIR__ . '/../.env');
+
 
         if (self::$_dbInstance === null)
         {
@@ -22,12 +21,14 @@ class dbController
         }
         return self::$_dbInstance;
     }
-    
+
     private function __construct($username, $password, $host, $database)
     { //Create the PDO object
+
         try
         {//Try to create the PDO object
             $this->_dbHandle = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+            var_dump($this->_dbHandle);
         }
         catch (PDOException $e)
         {//Catch any errors
