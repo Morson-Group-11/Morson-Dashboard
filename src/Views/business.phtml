@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morson</title>
+
     <style>
         body {
             font-family: Poppins, sans-serif;
@@ -53,7 +54,13 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 100%; /* Set a fixed height for each data-section */
+            height: 580px;
+            position: relative;
+            border-right: 4px solid #000; /* Add a black right border */
+        }
+
+        .data-section:last-child {
+            border-right: 0; /* Remove border from the last data section */
         }
 
         footer {
