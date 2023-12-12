@@ -18,17 +18,14 @@
 
     <div class="form-container sign-in">
 
-        <form>
-
-            <h1> <u> Sign In</u> </h1>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>Sign In</button>
-
+        <form action="../login.php" method="post">
+            <h1><u>Sign In</u></h1>
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="submit" value="Sign In">
         </form>
 
     </div>
-
 
 
     <div class="toggle-container">
@@ -38,7 +35,8 @@
             <div class="toggle-panel toggle-right">
 
                 <h1>We are the Morson Group: Placing People First</h1>
-                <p>We’re creating a better, more innovative world – inspiring, supporting, reskilling and nurturing the talent of today, tomorrow and the future.</p>
+                <p>We’re creating a better, more innovative world – inspiring, supporting, reskilling and nurturing the
+                    talent of today, tomorrow and the future.</p>
 
             </div>
 
