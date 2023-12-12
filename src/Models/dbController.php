@@ -17,7 +17,7 @@ class dbController
 
         if (self::$_dbInstance === null)
         {
-            self::$_dbInstance = new self($username, $password, $host, $dbName);
+            self::$_dbInstance = new self($env["DB_USER"], $env["DB_PASS"], $env["DB_HOST"], $env["DB_NAME"]);
         }
         return self::$_dbInstance;
     }
