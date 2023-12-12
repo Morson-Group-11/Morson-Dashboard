@@ -79,17 +79,18 @@
 <section>
     <div class="data-section">
         <h2>What day is Payday?</h2>
-        <p>Payday is: 00/00/0000</p>
+        <p>Payday is: <?php /** @var $view */
+            echo $view->departmentDataSet['commercial_and_accounts']['payday'];?></p>
     </div>
 
     <div class="data-section">
         <h2>Payroll Bulletins</h2>
-        <p>N/A</p>
+        <p><?php echo $view->departmentDataSet['commercial_and_accounts']['payroll_bulletin'] ?></p>
     </div>
 
     <div class="data-section">
         <h2>Best Performing Projects</h2>
-        <p>This Month</p>
+        <p><?php echo $view->departmentDataSet['commercial_and_accounts']['best_performing_projects'] ?></p>
     </div>
 </section>
 
@@ -101,3 +102,8 @@
 
 </body>
 </html>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 30000);
+</script>

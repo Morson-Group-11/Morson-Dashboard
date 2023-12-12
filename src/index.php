@@ -1,33 +1,15 @@
 <?php
-require_once 'Models/businessDataSet.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+require_once 'Models/viewRotator.php';
 
-$views = [
-    1 => 'Views/business.phtml',
-    2 => 'Views/commercialAndAccounts.phtml',
-    3 => 'Views/healthAndSafety.phtml',
-    4 => 'Views/hr.phtml',
-    5 => 'Views/itAndSystems.phtml'
-];
+$viewRotator = new ViewRotator();
+$currentView = $viewRotator->getCurrentView();
 
-$currentViewKey = isset($_GET['view']) ? (int)$_GET['view'] : 1;
+$view = new stdClass();
+$view->departmentDataSet = $viewRotator->getViewData($currentView);
 
-if (!array_key_exists($currentViewKey, $views))
-{
-    $currentViewKey = 1;
-}
+require_once 'Views/' . $currentView;
 
-include $views[$currentViewKey];
-?>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        setInterval(changeView, 3000); // Change view every 30 seconds
-    });
-
-    function changeView() {
-        var currentView = <?php echo $currentViewKey; ?>;
-        var nextView = (currentView % 5) + 1;
-        window.location.href = '?view=' + nextView;
-    }
-</script>
-
+$viewRotator->getNextView();
