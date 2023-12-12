@@ -56,7 +56,13 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 100%; /* Set a fixed height for each data-section */
+            height: 580px;
+            position: relative;
+            border-right: 4px solid #000; /* Add a black right border */
+        }
+
+        .data-section:last-child {
+            border-right: 0; /* Remove border from the last data section */
         }
 
         footer {
@@ -78,20 +84,20 @@
 
 <section>
     <div class="data-section">
-        <h2>HR Bulletin</h2>
-        <p>Data for section 1 goes here.</p>
+        <h2 style="font-size: 50px">HR Bulletin</h2>
+        <p style="font-size: 30px">Data for section 1 goes here.</p>
     </div>
 
     <div class="data-section">
-        <h2>Upcoming Bank Holidays</h2>
-        <p>New Year's Day - January 1st 2024</p>
-        <p>Spring Bank Holiday - May 27th 2024</p>
-        <p>Good Friday - March 29th 2024</p>
+        <h2 style="font-size: 50px">Upcoming Bank Holidays</h2>
+        <p style="font-size: 30px">New Year's Day - January 1st 2024</p>
+        <p style="font-size: 30px">Spring Bank Holiday - May 27th 2024</p>
+        <p style="font-size: 30px">Good Friday - March 29th 2024</p>
     </div>
 
     <div class="data-section">
-        <h2>Benefit Announcements</h2>
-        <p>Data for section 3 goes here.</p>
+        <h2 style="font-size: 50px">Benefits</h2>
+        <p style="font-size: 30px">Data for section 3 goes here.</p>
     </div>
 </section>
 

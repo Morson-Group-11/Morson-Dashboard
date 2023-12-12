@@ -54,7 +54,13 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 100%; /* Set a fixed height for each data-section */
+            height: 580px;
+            position: relative;
+            border-right: 4px solid #000; /* Add a black right border */
+        }
+
+        .data-section:last-child {
+            border-right: 0; /* Remove border from the last data section */
         }
 
         footer {
@@ -78,18 +84,18 @@
 
 <section>
     <div class="data-section">
-        <h2>Number of live bids</h2>
-        <p>live number</p>
+        <h2 style="font-size: 50px">>Number of live bids</h2>
+        <p style="font-size: 30px">live number</p>
     </div>
 
     <div class="data-section">
-        <h2>Total Bids</h2>
-        <p>total bids live number</p>
+        <h2 style="font-size: 50px">Total Bids</h2>
+        <p style="font-size: 30px">total bids live number</p>
     </div>
 
     <div class="data-section">
-        <h2>Number of current leads</h2>
-        <p>Data for section 3 goes here.</p>
+        <<h2 style="font-size: 50px">Number of current leads</h2>
+        <p style="font-size: 30px">Data for section 3 goes here.</p>
     </div>
 </section>
 

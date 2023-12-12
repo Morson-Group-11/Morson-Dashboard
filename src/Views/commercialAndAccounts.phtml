@@ -56,7 +56,13 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 100%;
+            height: 580px;
+            position: relative;
+            border-right: 4px solid #000; /* Add a black right border */
+        }
+
+        .data-section:last-child {
+            border-right: 0; /* Remove border from the last data section */
         }
 
         footer {
@@ -78,18 +84,18 @@
 
 <section>
     <div class="data-section">
-        <h2>What day is Payday?</h2>
-        <p>Payday is: 00/00/0000</p>
+        <h2 style="font-size: 50px">What day is Payday?</h2>
+        <p style="font-size: 30px">Payday is: 00/00/0000</p>
     </div>
 
     <div class="data-section">
-        <h2>Payroll Bulletins</h2>
-        <p>N/A</p>
+        <h2 style="font-size: 50px">Payroll Bulletins</h2>
+        <p style="font-size: 30px">N/A</p>
     </div>
 
     <div class="data-section">
-        <h2>Best Performing Projects</h2>
-        <p>This Month</p>
+        <h2 style="font-size: 50px">Best Performing Projects</h2>
+        <p style="font-size: 30px">This Month</p>
     </div>
 </section>
 

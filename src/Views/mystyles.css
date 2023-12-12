@@ -48,11 +48,11 @@ section {
     padding: 20px;
     height: 580px;
     position: relative;
+    border-right: 4px solid #000; /* Add a black right border */
 }
 
-.data-section:not(:last-child) {
-    border-right: 0; /* Set the border-right to 0 to hide the divider */
-    height: 580px; /* Adjust the height as needed */
+.data-section:last-child {
+    border-right: 0; /* Remove border from the last data section */
 }
 
 footer {
@@ -63,3 +63,5 @@ footer {
     margin-top: auto;
     position: relative;
 }
+
+

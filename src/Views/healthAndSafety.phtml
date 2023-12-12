@@ -56,7 +56,13 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 100%; /* Set a fixed height for each data-section */
+            height: 580px;
+            position: relative;
+            border-right: 4px solid #000; /* Add a black right border */
+        }
+
+        .data-section:last-child {
+            border-right: 0; /* Remove border from the last data section */
         }
 
         footer {
@@ -78,20 +84,20 @@
 
 <section>
     <div class="data-section">
-        <h2>Total Accidents</h2>
-        <p>400000</p>
+        <h2 style="font-size: 50px">Total Accidents</h2>
+        <p style="font-size: 30px">400000</p>
     </div>
 
     <div class="data-section">
-        <h2>Health and Safety Bulletin</h2>
-        <p>This month we have this</p>
-        <p>safety equipment</p>
-        <p>extra training</p>
+        <h2 style="font-size: 50px">Health and Safety Bulletin</h2>
+        <p style="font-size: 30px">This month we have this</p>
+        <p style="font-size: 30px">safety equipment</p>
+        <p style="font-size: 30px">extra training</p>
     </div>
 
     <div class="data-section">
-        <h2>Absences</h2>
-        <p>at least callum hall.</p>
+        <h2 style="font-size: 50px">Absences</h2>
+        <p style="font-size: 30px">data here.</p>
     </div>
 </section>
 
