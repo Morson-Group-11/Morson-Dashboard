@@ -31,7 +31,7 @@ class dbController
         try
         {//Try to create the PDO object
             $this->_dbHandle = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-            var_dump($this->_dbHandle);
+            /*var_dump($this->_dbHandle);*/
         }
         catch (PDOException $e)
         {//Catch any errors
