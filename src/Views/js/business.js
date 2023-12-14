@@ -1,3 +1,4 @@
+console.log("Running business.js");
 function updateBusinessData(businessData) {
     var liveBidsElement = document.getElementById('liveBids');
     console.log(liveBidsElement);

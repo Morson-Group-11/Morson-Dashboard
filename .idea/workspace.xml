@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7913aa55-60ab-4037-b253-5f3de6144ca5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/js/business.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/business.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/commercialAndAccounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/commercialAndAccounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/healthAndSafety.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/healthAndSafety.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/itAndSystems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/itAndSystems.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

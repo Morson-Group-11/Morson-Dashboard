@@ -1,7 +1,10 @@
+console.log("Running hr.js");
 function updateView() {
+    console.log("Updating HR data...")
     fetch('/fetchViewData.php')
         .then(response => response.json())
         .then(data => {
+            console.log('Server response: ', data);
             if (data.departmentDataSet && data.departmentDataSet.human_resources) {
                 var hrData = data.departmentDataSet.human_resources;
                 var latestHRData = hrData[hrData.length - 1]; // Get the latest data entry
