@@ -31,9 +31,4 @@ function updateView() {
             console.error('Error fetching and updating business data:', error);
         });
 }
-
-// Schedule the function to run every 30 seconds
-setInterval(updateView, 30000);
-
-// Initial call to start the data fetch and view update process
 updateView();
