@@ -33,23 +33,27 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
     var abortController = new AbortController(); // Controller to abort fetch requests
 
     function loadNextView() {
-        // Abort any ongoing fetch requests
+        console.log('Loading next view');
         abortController.abort();
         abortController = new AbortController();
 
         fetch('getNextView.php')
+            console.log('Fetching next view');
             .then(response => response.json())
             .then(data => {
+                console.log('Received data');
                 currentViewName = data.viewName; // Update the current view name
                 const mainContent = document.getElementById('mainContent');
                 mainContent.innerHTML = data.html;
 
                 const scriptUrl = '/Views/js/' + data.viewName + '.js';
                 const script = document.createElement('script');
+                console.log('Loading script: ' + scriptUrl);
                 script.src = scriptUrl;
 
                 script.onload = () => {
                     if (typeof updateView === 'function') {
+                        console.log('Calling updateView');
                         updateView(abortController.signal); // Pass the signal to the updateView function
                     }
                 };
