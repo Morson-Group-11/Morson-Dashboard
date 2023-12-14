@@ -5,39 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morson</title>
     <link rel="stylesheet" type="text/css" href="/Views/mystyles.css">
+    <link rel="stylesheet" type="text/css" href="/Views/itSystems.css">
+    <style>
+        .column {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
 
+
+
 <header>
     <img src="/Views/Images/morson.png" alt="">
-    <h1 style='position:relative; top:60px; left:-130px; font-size: 65px'>IT and Systems</h1>
+    <h1 style='position:relative; top:60px; left:-130px; font-size: 7em'>IT and Systems</h1>
 </header>
 
 <section>
-    <div class="data-section">
-        <h2>Scheduled Outages</h2>
+    <div class="data-section padded">
+        <h2 style="font-size: 4em">Scheduled Outages</h2>
         <?php if (isset($view->departmentDataSet['it_and_systems']['scheduled_outages'])): ?>
-            <p><?php echo $view->departmentDataSet['it_and_systems']['scheduled_outages']; ?></p>
+            <p style="font-size: 4em"><?php echo $view->departmentDataSet['it_and_systems']['scheduled_outages']; ?></p>
         <?php else: ?>
             <p>No scheduled outages data available.</p>
         <?php endif; ?>
     </div>
 
-    <div class="data-section">
-        <h2>System Status</h2>
+    <div class="data-section padded">
+        <h2 style="font-size: 4em">Build Status - Software</h2>
+
+            <?php foreach ($view->departmentDataSet['it_and_systems_status'] as $row): ?>
+                <p style="font-size: 2em; margin: 5px"><strong>System:</strong> <?php echo $row['system']; ?></p>
+                <p style="font-size: 2em; margin: 5px"><strong>Status:</strong> <?php echo $row['status']; ?></p>
+            <?php endforeach; ?>
+
+
+    </div>
+
+    <div class="data-section padded">
+        <h2 style="font-size: 3em">System Status</h2>
         <?php foreach ($view->departmentDataSet['it_and_systems_software'] as $row): ?>
-            <p><strong>Software:</strong> <?php echo $row['software']; ?></p>
-            <p><strong>Build Status:</strong> <?php echo $row['build_status']; ?></p>
+            <p style="font-size: 40px"><strong>Software:</strong> <?php echo $row['software']; ?></p>
+            <p style="font-size: 40px"><strong>Build Status:</strong> <?php echo $row['build_status']; ?></p>
         <?php endforeach; ?>
     </div>
 
-    <div class="data-section">
-        <h2>Build Status - Software</h2>
-        <?php foreach ($view->departmentDataSet['it_and_systems_status'] as $row): ?>
-            <p><strong>System:</strong> <?php echo $row['system']; ?></p>
-            <p><strong>System:</strong> <?php echo $row['status']; ?></p>
-        <?php endforeach; ?>
-    </div>
+
 </section>
 
 <footer>

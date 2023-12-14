@@ -56,7 +56,7 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 580px;
+            height: 630px;
             position: relative;
             border-right: 4px solid #000; /* Add a black right border */
         }
@@ -95,19 +95,19 @@
 
 <section>
     <div class="data-section">
-        <h2>HR Bulletin</h2>
-        <p><?php /** @var TYPE_NAME $view */
+        <h2 style="font-size: 4em">HR Bulletin</h2>
+        <p style="font-size: 4em"><?php /** @var TYPE_NAME $view */
             echo $view->departmentDataSet['human_resources']['human_resources_bulletin'] ?></p>
     </div>
 
     <div class="data-section">
-        <h2>Upcoming Bank Holidays</h2>
-        <p><?php echo $view->departmentDataSet['human_resources']['bank_holiday'] ?></p>
+        <h2 style="font-size: 4em">Upcoming Bank Holidays</h2>
+        <p style="font-size: 4em"><?php echo $view->departmentDataSet['human_resources']['bank_holiday'] ?></p>
     </div>
 
     <div class="data-section">
-        <h2>Benefit Announcements</h2>
-        <p><?php echo $view->departmentDataSet['human_resources']['benefits_announcements'] ?></p>
+        <h2 style="font-size: 4em">Benefit Announcements</h2>
+        <p style="font-size: 4em"><?php echo $view->departmentDataSet['human_resources']['benefits_announcements'] ?></p>
     </div>
 
 </section>

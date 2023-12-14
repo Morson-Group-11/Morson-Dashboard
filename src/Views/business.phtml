@@ -54,7 +54,7 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 580px;
+            height: 630px;
             position: relative;
             border-right: 4px solid #000; /* Add a black right border */
         }
@@ -88,27 +88,27 @@
 
 <header>
     <img src="/Views/Images/morson.png" alt="">
-    <h1 style='position:relative; top:60px; left:-130px'>Business Development Updates</h1>
+    <h1 style='position:relative; top:60px; left:-130px; font-size: 7em'>Business Development Updates</h1>
 
 
 </header>
 
 <section>
     <div class="data-section">
-        <h2>Number of live bids</h2>
-        <p><?php /** @var $view */
+        <h2 style="font-size: 4em">Number of live bids</h2>
+        <p style="font-size: 4em"><?php /** @var $view */
             echo $view->departmentDataSet['business_development']['live_bids']; ?>
         </p>
     </div>
 
     <div class="data-section">
-        <h2>Total Bids</h2>
-        <p><?php echo '£' . number_format($view->departmentDataSet['business_development']['value_live_bids']); ?></p>
+        <h2 style="font-size: 4em">Total Bids</h2>
+        <p style="font-size: 4em"><?php echo '£' . number_format($view->departmentDataSet['business_development']['value_live_bids']); ?></p>
     </div>
 
     <div class="data-section">
-        <h2>Number of current leads</h2>
-        <p><?php echo $view->departmentDataSet['business_development']['current_leads']; ?></p>
+        <h2 style="font-size: 4em">Number of current leads</h2>
+        <p style="font-size: 4em"><?php echo $view->departmentDataSet['business_development']['current_leads']; ?></p>
     </div>
 </section>
 

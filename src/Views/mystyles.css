@@ -36,9 +36,6 @@ header img {
 
 section {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
     flex-direction: row;
 }
 
