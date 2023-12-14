@@ -29,34 +29,40 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
 </footer>
 
 <script>
+    var currentViewName = '<?php echo $currentViewName; ?>'; // Set the initial view name
+    var abortController = new AbortController(); // Controller to abort fetch requests
+
     function loadNextView() {
-        var currentViewName = '<?php echo $currentViewName; ?>'; // Set the initial view name
-        console.log("Next View Loaded");
+        // Abort any ongoing fetch requests
+        abortController.abort();
+        abortController = new AbortController();
+
         fetch('getNextView.php')
-            .then(response => response.json()) // Assuming the response will be JSON
+            .then(response => response.json())
             .then(data => {
                 currentViewName = data.viewName; // Update the current view name
                 const mainContent = document.getElementById('mainContent');
-                mainContent.innerHTML = data.html; // Assuming 'html' is part of the response
+                mainContent.innerHTML = data.html;
 
-                // Dynamically load the JavaScript file for the view
-                const scriptUrl = '/Views/js/' + data.viewName + '.js'; // Construct the script URL
+                const scriptUrl = '/Views/js/' + data.viewName + '.js';
                 const script = document.createElement('script');
                 script.src = scriptUrl;
-                console.log("scriptUrl: " + scriptUrl);
+
                 script.onload = () => {
                     if (typeof updateView === 'function') {
-                        updateView();
-                        console.log("updateView ran");
+                        updateView(abortController.signal); // Pass the signal to the updateView function
                     }
                 };
+
                 document.body.appendChild(script);
             })
             .catch(error => console.error('Error:', error));
     }
+
     setInterval(loadNextView, 30000);
-    loadNextView();
+    loadNextView(); // Load the initial view
 </script>
+
 
 </body>
 </html>
