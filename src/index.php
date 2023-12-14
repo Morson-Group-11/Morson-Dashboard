@@ -30,10 +30,12 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
 
 <script>
     function loadNextView() {
+        var currentViewName = '<?php echo $currentViewName; ?>'; // Set the initial view name
         console.log("Next View Loaded");
         fetch('getNextView.php')
             .then(response => response.json()) // Assuming the response will be JSON
             .then(data => {
+                currentViewName = data.viewName; // Update the current view name
                 const mainContent = document.getElementById('mainContent');
                 mainContent.innerHTML = data.html; // Assuming 'html' is part of the response
 

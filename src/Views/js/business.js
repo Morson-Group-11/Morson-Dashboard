@@ -23,6 +23,11 @@ function updateBusinessData(businessData) {
 }
 
 function updateView() {
+    if (currentViewName !== 'business') {
+        console.log('Business view is no longer active. Exiting updateView.');
+        return;
+    }
+    console.log('Fetching business data...');
     console.log('Fetching business data...');
     fetch('/fetchViewData.php')
         .then(response => {
