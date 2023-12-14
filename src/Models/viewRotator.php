@@ -28,21 +28,23 @@ class ViewRotator
     {
         $dataSet = new DepartmentDataset();
 
-        if ($view === 'itAndSystems.phtml') {
-            $data = $dataSet->fetchAllBusinesses();
-            $monthlyData = $dataSet->fetchBusinessFromMonth(12);
-            if (isset($monthlyData['it_and_systems']['scheduled_outages'])) {
-                $data['it_and_systems']['scheduled_outages'] = $monthlyData['it_and_systems']['scheduled_outages'];
-            }
-        } else {
-            $data = $dataSet->fetchBusinessFromMonth(12);
+        // Fetch common data for all views
+        $data = $dataSet->fetchAllBusinesses();
+        $monthlyData = $dataSet->fetchBusinessFromMonth(12);
+
+        // Handling for IT and Systems data
+        $data['it_and_systems_status'] = $dataSet->fetchItAndSystemsStatus();
+        $data['it_and_systems_software'] = $dataSet->fetchItAndSystemsSoftware();
+
+        // Handling for 'scheduled_outages' for IT and Systems
+        if (isset($monthlyData['it_and_systems']['scheduled_outages'])) {
+            $data['it_and_systems']['scheduled_outages'] = $monthlyData['it_and_systems']['scheduled_outages'];
         }
 
-        // Ensure 'it_and_systems' data is an array
-        if (!is_array($data['it_and_systems'])) {
-            $data['it_and_systems'] = [];
-        }
+        // Additional handling for other views (if any specific logic is required)
 
         return $data;
     }
+
+
 }

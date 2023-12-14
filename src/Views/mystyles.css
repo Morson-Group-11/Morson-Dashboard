@@ -27,8 +27,12 @@ h1 {
     display: flex;
 }
 
+h2{
+    text-decoration: underline;
+}
+
 header img {
-    max-height: 65px;
+    max-height: 100px;
     margin-right: 10px;
 }
 
@@ -43,21 +47,15 @@ section {
     padding: 20px;
     height: 1000px;
     position: relative;
-    border-right: 4px solid #000; /* Add a black right border */
+    border-right: 4px solid #000;
+    margin-top: 30px;
 }
 
 .data-section:last-child {
     border-right: 0; /* Remove border from the last data section */
 }
 
-footer {
-    background-color: #00008b;
-    color: #fff;
-    text-align: center;
-    padding: -1px;
-    margin-top: auto;
-    position: relative;
-}
+
 
 .disclaimer-section {
     position: fixed;
@@ -81,7 +79,7 @@ footer {
 }
 
 .healthAndSafety{
-    background-color: #00008b;
+    background-color: #BDDCE6;
     color: #fff;
 }
 
@@ -95,4 +93,71 @@ footer {
     background-color: #F6A8A8;
     color: #fff;
 }
+
+.row {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .container, .container-md, .container-sm {
+        max-width: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .container, .container-sm {
+        max-width: none;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translate3d(100%, 0, 0); /* Start just off the right edge */
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0); /* End just off the left edge */
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100vw); /* Start just off the right edge */
+    }
+    100% {
+        transform: translateX(-100%); /* End just off the left edge */
+    }
+}
+
+footer {
+    background-color: #00008b;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    margin-top: auto;
+    position: relative;
+    height: 60px;
+    font-size: 27px;
+    width: 100%;
+    overflow: hidden;
+}
+
+footer p {
+    position: absolute;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    animation: scroll 20s linear infinite;
+}
+
 

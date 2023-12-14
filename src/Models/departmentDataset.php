@@ -55,4 +55,19 @@ class DepartmentDataset
 
         return $this->departments;
     }
+
+    public function fetchItAndSystemsStatus() {
+        $sqlQuery = "SELECT * FROM it_and_systems_status"; // Adjust the query as needed
+        $statement = $this->_dbHandle->prepare($sqlQuery);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public function fetchItAndSystemsSoftware() {
+        $sqlQuery = "SELECT * FROM it_and_systems_software"; // Adjust the query as needed
+        $statement = $this->_dbHandle->prepare($sqlQuery);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
