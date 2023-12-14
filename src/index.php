@@ -29,14 +29,18 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
 </footer>
 
 <script>
-    var currentViewName = '<?php echo $currentViewName; ?>'; // Set the initial view name
-    var abortController = new AbortController(); // Controller to abort fetch requests
+    var currentViewName = '<?php echo $currentViewName; ?>';
+    var abortController = new AbortController();
+
+    function clearExistingScripts() {
+        // Remove any existing scripts added previously
+        document.querySelectorAll('script.dynamic-script').forEach(script => script.remove());
+    }
 
     function loadNextView() {
         console.log('Loading next view');
         abortController.abort();
         abortController = new AbortController();
-        
 
         fetch('getNextView.php')
             .then(response => response.json())
@@ -46,16 +50,18 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
                 const mainContent = document.getElementById('mainContent');
                 mainContent.innerHTML = data.html;
 
+                clearExistingScripts(); // Clear existing scripts
+
                 const scriptUrl = '/Views/js/' + data.viewName + '.js';
                 const script = document.createElement('script');
+                script.classList.add('dynamic-script'); // Add a class for easy identification
                 console.log('Loading script: ' + scriptUrl);
                 script.src = scriptUrl;
 
                 script.onload = () => {
                     if (typeof updateView === 'function') {
                         console.log('Calling updateView');
-                        console.log("current view: " + currentViewName +"");
-                        updateView(abortController.signal); // Pass the signal to the updateView function
+                        setTimeout(() => updateView(abortController.signal), 100); // Delay execution
                     }
                 };
 
@@ -67,6 +73,7 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
     setInterval(loadNextView, 30000);
     loadNextView(); // Load the initial view
 </script>
+
 
 
 </body>
