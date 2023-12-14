@@ -9,8 +9,6 @@ body {
 }
 
 header {
-    background-color: #F6A8A8;
-    color: #fff;
     text-align: center;
     padding: 50px 20px;
     border-bottom: 10px solid #000;
@@ -72,4 +70,29 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
 }
 
+.business{
+    background-color: #AF0707; /* Updated color */
+    color: #fff;
+}
+
+.commercial{
+    background-color: #279989;
+    color: #fff;
+}
+
+.healthAndSafety{
+    background-color: #00008b;
+    color: #fff;
+}
+
+
+.hr{
+    background-color: #22272E;
+    color: #fff;
+}
+
+.itSystems{
+    background-color: #F6A8A8;
+    color: #fff;
+}
 
