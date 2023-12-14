@@ -36,7 +36,7 @@ function updateView() {
         return;
     }
     console.log('Fetching business data...');
-    fetch('/fetchViewData.php', { signal: signal})
+    fetch('/fetchViewData.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok: ' + response.statusText);
