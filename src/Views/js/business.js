@@ -1,9 +1,11 @@
 function updateView() {
     fetch('/fetchViewData.php')
-        .then(response => response.json())
+        .then(response => response.text())  // Get the response text
+        .then(text => {
+            console.log('Response text:', text);  // Log the response text
+            return JSON.parse(text);  // Parse the text as JSON
+        })
         .then(data => {
-            console.log(data);
-            return JSON.parse(data);
             if (data.departmentDataSet && data.departmentDataSet.business_development) {
                 var businessDataArray = data.departmentDataSet.business_development;
                 var selectedMonthData = businessDataArray.find(entry => entry.month === 12); // Replace with desired month
