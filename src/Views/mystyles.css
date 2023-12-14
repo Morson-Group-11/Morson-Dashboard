@@ -36,9 +36,6 @@ header img {
 
 section {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
     flex-direction: row;
 }
 
@@ -46,7 +43,7 @@ section {
     flex: 1;
     text-align: center;
     padding: 20px;
-    height: 580px;
+    height: 1000px;
     position: relative;
     border-right: 4px solid #000; /* Add a black right border */
 }
@@ -62,6 +59,17 @@ footer {
     padding: -1px;
     margin-top: auto;
     position: relative;
+}
+
+.disclaimer-section {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    background-color: #fff; /* Add background color as needed */
+    padding: 10px;
+    border: 1px solid #000; /* Add border as needed */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
 }
 
 

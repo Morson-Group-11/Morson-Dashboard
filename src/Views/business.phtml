@@ -32,9 +32,12 @@
             margin-top: 10px;
             flex: 1;
             text-align: center;
-            align-items: center; /* Center the text vertically */
-            justify-content: center; /* Center the text horizontally */
-            display: flex; /* Added to enable align-items and justify-content */
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            position: relative;
+            top: 60px;
+            left: -130px;
         }
 
         header img {
@@ -54,7 +57,7 @@
             flex: 1;
             text-align: center;
             padding: 20px;
-            height: 580px;
+            height: 1000px;
             position: relative;
             border-right: 4px solid #000; /* Add a black right border */
         }
@@ -71,39 +74,54 @@
             margin-top: auto;
             position: relative;
         }
+
+        .disclaimer-section {
+            position: fixed;
+            bottom: 60px;
+            right: 10px;
+            background-color: #fff; /* Add background color as needed */
+            padding: 10px;
+            border: 1px solid #000; /* Add border as needed */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="/Views/Images/morson.png" alt="">
-    <h1 style='position:relative; top:60px; left:-130px'>Business Development Updates</h1>
+    <img src="/Views/Images/morson-white.png" alt="">
+    <h1 style='position:relative; top:60px; left:-130px; font-size: 7em'>Business Development Updates</h1>
 
 
 </header>
 
 <section>
     <div class="data-section">
-        <h2>Number of live bids</h2>
-        <p><?php /** @var $view */
+        <h2 style="font-size: 4em">Number of live bids</h2>
+        <p style="font-size: 4em"><?php /** @var $view */
             echo $view->departmentDataSet['business_development']['live_bids']; ?>
         </p>
     </div>
 
     <div class="data-section">
-        <h2>Total Bids</h2>
-        <p><?php echo '£' . number_format($view->departmentDataSet['business_development']['value_live_bids']); ?></p>
+        <h2 style="font-size: 4em">Total Bids</h2>
+        <p style="font-size: 4em"><?php echo '£' . number_format($view->departmentDataSet['business_development']['value_live_bids']); ?></p>
     </div>
 
     <div class="data-section">
-        <h2>Number of current leads</h2>
-        <p><?php echo $view->departmentDataSet['business_development']['current_leads']; ?></p>
+        <h2 style="font-size: 4em">Number of current leads</h2>
+        <p style="font-size: 4em"><?php echo $view->departmentDataSet['business_development']['current_leads']; ?></p>
     </div>
 </section>
 
 <footer>
     <p>sample text</p>
 </footer>
+
+<div class="disclaimer-section">
+    <p style="font-size: 20px; color:red">DISCLAIMER: [This is a HackCamp Project, and does not reflect the views of Morson Projects, or Morson Group.]</p>
+</div>
 
 
 </body>
