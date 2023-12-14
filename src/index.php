@@ -36,6 +36,7 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
         console.log('Loading next view');
         abortController.abort();
         abortController = new AbortController();
+        
 
         fetch('getNextView.php')
             .then(response => response.json())
@@ -53,6 +54,7 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
                 script.onload = () => {
                     if (typeof updateView === 'function') {
                         console.log('Calling updateView');
+                        console.log("current view: " + currentViewName +"");
                         updateView(abortController.signal); // Pass the signal to the updateView function
                     }
                 };
