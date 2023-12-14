@@ -1,7 +1,25 @@
 function updateBusinessData(businessData) {
-    document.getElementById('liveBids').innerText = businessData['live_bids'] || 'No data available.';
-    document.getElementById('totalBids').innerText = '£' + (businessData['value_live_bids'] || '0');
-    document.getElementById('currentLeads').innerText = businessData['current_leads'] || 'No data available.';
+    var liveBidsElement = document.getElementById('liveBids');
+    var totalBidsElement = document.getElementById('totalBids');
+    var currentLeadsElement = document.getElementById('currentLeads');
+
+    if (liveBidsElement) {
+        liveBidsElement.innerText = businessData['live_bids'] || 'No data available.';
+    } else {
+        console.error('Element with ID liveBids not found');
+    }
+
+    if (totalBidsElement) {
+        totalBidsElement.innerText = '£' + (businessData['value_live_bids'] || '0');
+    } else {
+        console.error('Element with ID totalBids not found');
+    }
+
+    if (currentLeadsElement) {
+        currentLeadsElement.innerText = businessData['current_leads'] || 'No data available.';
+    } else {
+        console.error('Element with ID currentLeads not found');
+    }
 }
 
 function updateView() {
