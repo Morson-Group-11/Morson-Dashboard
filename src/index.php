@@ -62,7 +62,7 @@
                         setTimeout(() => {
                             console.log('Calling updateView function for:', data.viewName);
                             updateView(abortController.signal);
-                        }, 400); // 100 ms delay
+                        }, 1000); // 100 ms delay
                     }
                 };
 
