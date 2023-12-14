@@ -29,6 +29,7 @@ function updateBusinessData(businessData) {
 }
 
 function updateView() {
+    console.log("call check")
     if (currentViewName !== 'business') {
         console.log('Business view is no longer active. Exiting updateView.');
         return;
