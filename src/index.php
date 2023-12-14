@@ -38,7 +38,6 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
         abortController = new AbortController();
 
         fetch('getNextView.php')
-            console.log('Fetching next view');
             .then(response => response.json())
             .then(data => {
                 console.log('Received data');
