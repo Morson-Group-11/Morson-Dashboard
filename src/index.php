@@ -41,6 +41,7 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
                 const scriptUrl = '/Views/js/' + data.viewName + '.js'; // Construct the script URL
                 const script = document.createElement('script');
                 script.src = scriptUrl;
+                console.log("scriptUrl: " + scriptUrl);
                 script.onload = () => {
                     if (typeof updateView === 'function') {
                         updateView();
