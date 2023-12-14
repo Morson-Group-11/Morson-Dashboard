@@ -43,7 +43,7 @@ section {
     flex: 1;
     text-align: center;
     padding: 20px;
-    height: 580px;
+    height: 1000px;
     position: relative;
     border-right: 4px solid #000; /* Add a black right border */
 }
