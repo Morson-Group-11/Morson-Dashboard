@@ -3,7 +3,7 @@ function updateView() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            return JSON.parse(text);
+            return JSON.parse(data);
             if (data.departmentDataSet && data.departmentDataSet.business_development) {
                 var businessDataArray = data.departmentDataSet.business_development;
                 var selectedMonthData = businessDataArray.find(entry => entry.month === 12); // Replace with desired month
