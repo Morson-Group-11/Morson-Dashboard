@@ -1,15 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-session_start();
-require_once './Models/viewRotator.php';
-
-$viewRotator = new ViewRotator();
-$currentView = $viewRotator->getCurrentView();
-$currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extension
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +9,18 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
 <body>
 
 <div id="mainContent">
-    <?php require_once 'Views/' . $currentView; // Load initial content ?>
+    <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    session_start();
+    require_once './Models/viewRotator.php';
+
+    $viewRotator = new ViewRotator();
+    $currentView = $viewRotator->getCurrentView();
+    $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extension
+    require_once 'Views/' . $currentView; // Load initial content
+    ?>
 </div>
 
 <footer>
@@ -30,51 +29,51 @@ $currentViewName = basename($currentView, '.phtml'); // Strip the .phtml extensi
 
 <script>
     var currentViewName = '<?php echo $currentViewName; ?>';
-    var abortController = new AbortController();
-
-    function clearExistingScripts() {
-        // Remove any existing scripts added previously
-        document.querySelectorAll('script.dynamic-script').forEach(script => script.remove());
-    }
+    var isLoadingView = false; // Flag to indicate a view is being loaded
+    var abortController = new AbortController(); // Controller to abort fetch requests
 
     function loadNextView() {
-        console.log('Loading next view');
+        console.log('Starting to load next view.');
+        isLoadingView = true;
         abortController.abort();
         abortController = new AbortController();
 
         fetch('getNextView.php')
-            .then(response => response.json())
+            .then(response => {
+                console.log('Received response from getNextView.php');
+                return response.json();
+            })
             .then(data => {
-                console.log('Received data');
+                console.log('Received data:', data);
                 currentViewName = data.viewName; // Update the current view name
                 const mainContent = document.getElementById('mainContent');
                 mainContent.innerHTML = data.html;
-
-                clearExistingScripts(); // Clear existing scripts
+                isLoadingView = false;
 
                 const scriptUrl = '/Views/js/' + data.viewName + '.js';
                 const script = document.createElement('script');
-                script.classList.add('dynamic-script'); // Add a class for easy identification
-                console.log('Loading script: ' + scriptUrl);
+                console.log('Loading script for view:', scriptUrl);
                 script.src = scriptUrl;
 
                 script.onload = () => {
+                    console.log('Script loaded:', scriptUrl);
                     if (typeof updateView === 'function') {
-                        console.log('Calling updateView');
-                        setTimeout(() => updateView(abortController.signal), 100); // Delay execution
+                        console.log('Calling updateView function for:', data.viewName);
+                        updateView(abortController.signal);
                     }
                 };
 
                 document.body.appendChild(script);
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error loading view:', error);
+            });
     }
 
     setInterval(loadNextView, 30000);
+    console.log('Initial view load.');
     loadNextView(); // Load the initial view
 </script>
-
-
 
 </body>
 </html>
