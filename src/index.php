@@ -58,8 +58,11 @@
                 script.onload = () => {
                     console.log('Script loaded:', scriptUrl);
                     if (typeof updateView === 'function') {
-                        console.log('Calling updateView function for:', data.viewName);
-                        updateView(abortController.signal);
+                        // Delay the execution of updateView
+                        setTimeout(() => {
+                            console.log('Calling updateView function for:', data.viewName);
+                            updateView(abortController.signal);
+                        }, 100); // 100 ms delay
                     }
                 };
 
@@ -72,7 +75,7 @@
 
     setInterval(loadNextView, 30000);
     console.log('Initial view load.');
-    loadNextView(); // Load the initial view
+    loadNextView();
 </script>
 
 </body>
