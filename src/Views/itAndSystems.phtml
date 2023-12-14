@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morson</title>
+    <link rel="stylesheet" type="text/css" href="/Views/mystyles.css">
+    <link rel="stylesheet" type="text/css" href="/Views/itSystems.css">
+    <style>
+        .column {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<header>
+    <img src="/Views/Images/morson-white.png" alt="">
+    <h1 style='position:relative; top:60px; left:-130px; font-size: 7em'>IT and Systems</h1>
+</header>
+
+<section>
+    <div class="data-section padded">
+        <h2 style="font-size: 4em">Scheduled Outages</h2>
+        <?php if (isset($view->departmentDataSet['it_and_systems']['scheduled_outages'])): ?>
+            <p style="font-size: 4em"><?php echo $view->departmentDataSet['it_and_systems']['scheduled_outages']; ?></p>
+        <?php else: ?>
+            <p>No scheduled outages data available.</p>
+        <?php endif; ?>
+    </div>
+
+    <div class="data-section padded">
+        <h2 style="font-size: 4em">Build Status - Software</h2>
+
+            <?php foreach ($view->departmentDataSet['it_and_systems_status'] as $row): ?>
+                <p style="font-size: 34px; margin: 5px"><strong>System:</strong> <?php echo $row['system']; ?></p>
+                <p style="font-size: 34px; margin: 5px"><strong>Status:</strong> <?php echo $row['status']; ?></p>
+            <?php endforeach; ?>
+
+
+    </div>
+
+    <div class="data-section padded">
+        <h2 style="font-size: 3em">System Status</h2>
+        <?php foreach ($view->departmentDataSet['it_and_systems_software'] as $row): ?>
+            <p style="font-size: 40px"><strong>Software:</strong> <?php echo $row['software']; ?></p>
+            <p style="font-size: 40px"><strong>Build Status:</strong> <?php echo $row['build_status']; ?></p>
+        <?php endforeach; ?>
+    </div>
+
+
+</section>
+
+<footer>
+    <p>sample text</p>
+</footer>
+
+<div class="disclaimer-section">
+    <p style="font-size: 20px; color:red">DISCLAIMER: [This is a HackCamp Project, and does not reflect the views of Morson Projects, or Morson Group.]</p>
+</div>
+
+<!-- Add more sections or content as needed -->
+
+</body>
+</html>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 30000);
+</script>

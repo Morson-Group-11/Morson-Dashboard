@@ -1,0 +1,75 @@
+body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #F6A8A8;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 10px solid #000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+h1 {
+    font-size: 64px;
+    margin-top: 10px;
+    flex: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+header img {
+    max-height: 65px;
+    margin-right: 10px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+.data-section {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    height: 1000px;
+    position: relative;
+    border-right: 4px solid #000; /* Add a black right border */
+}
+
+.data-section:last-child {
+    border-right: 0; /* Remove border from the last data section */
+}
+
+footer {
+    background-color: #00008b;
+    color: #fff;
+    text-align: center;
+    padding: -1px;
+    margin-top: auto;
+    position: relative;
+}
+
+.disclaimer-section {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    background-color: #fff; /* Add background color as needed */
+    padding: 10px;
+    border: 1px solid #000; /* Add border as needed */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+}
+
+
