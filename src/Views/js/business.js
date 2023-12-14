@@ -2,6 +2,8 @@ function updateView() {
     fetch('/fetchViewData.php')
         .then(response => response.json())
         .then(data => {
+            console.log(data);
+            return JSON.parse(text);
             if (data.departmentDataSet && data.departmentDataSet.business_development) {
                 var businessDataArray = data.departmentDataSet.business_development;
                 var selectedMonthData = businessDataArray.find(entry => entry.month === 12); // Replace with desired month
