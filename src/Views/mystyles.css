@@ -157,7 +157,7 @@ footer {
 footer p {
     position: absolute;
     white-space: nowrap; /* Prevents text from wrapping to the next line */
-    animation: scroll 20s linear infinite;
+    animation: scroll linear infinite;
 }
 
 

@@ -24,7 +24,7 @@
 </div>
 
 <footer>
-    <p>sample news ticker</p>
+    <p id="news">sample news ticker</p>
 </footer>
 
 <script>
@@ -76,6 +76,23 @@
     setInterval(loadNextView, 30000);
     console.log('Initial view load.');
     loadNextView();
+
+    function loadNews() {
+        fetch('https://www.morson-projects.co.uk/wp-json/wp/v2/posts/').then((response) => {
+            response.json().then((data) => {
+                let news = data.map((newsItem) => newsItem.title.rendered + ": " + newsItem.excerpt.rendered).join(" • ")
+                // Remove any html tags and newlines
+                news = news.replace(/\<[^>]*\>/g, '').replace(/\n/g, '')
+                document.getElementById("news").innerText = news
+                // Best effort attempt to make the animation take the same amount of time no matter the length
+                // Multiply a duration for each character, and cap at 10000ms otherwise short messages scroll really quickly
+                document.getElementById("news").style.animationDuration = `${Math.max(news.length * 50, 10000)}ms`;
+            })
+        })
+
+    }
+    loadNews()
+    setInterval(loadNews, 1800000); // 30 minutes
 </script>
 
 </body>
