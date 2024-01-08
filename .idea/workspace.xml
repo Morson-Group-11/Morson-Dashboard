@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7913aa55-60ab-4037-b253-5f3de6144ca5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/business.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/business.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/commercialAndAccounts.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/commercialAndAccounts.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/healthAndSafety.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/healthAndSafety.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/hr.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/hr.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/mystyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/business.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/business.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/commercialAndAccounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/commercialAndAccounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/healthAndSafety.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/healthAndSafety.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/js/itAndSystems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/js/itAndSystems.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,27 +37,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "PHP Built-in Web Server.Unnamed.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat/css-final",
-    "last_opened_file_path": "E:/NextCloud/Uni/Second Year/PHP/LiveWorkFolder/00663219_SGC185",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;PHP Built-in Web Server.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/bootstrap&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/NextCloud/Uni/Second Year/PHP/LiveWorkFolder/00663219_SGC185&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\HackCamp\Morson-Dashboard\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$/src" port="800">
       <method v="2" />
