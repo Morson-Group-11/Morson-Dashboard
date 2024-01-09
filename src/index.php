@@ -58,11 +58,8 @@
                 script.onload = () => {
                     console.log('Script loaded:', scriptUrl);
                     if (typeof updateView === 'function') {
-                        // Delay the execution of updateView
-                        setTimeout(() => {
-                            console.log('Calling updateView function for:', data.viewName);
-                            updateView(abortController.signal);
-                        }, 3000); // 100 ms delay
+                        console.log('Calling updateView function for:', data.viewName);
+                        updateView(abortController.signal);
                     }
                 };
 
